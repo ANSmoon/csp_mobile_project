@@ -1,0 +1,62 @@
+plugins {
+	id 'java'
+	id 'org.springframework.boot' version '3.1.1'
+	id 'io.spring.dependency-management' version '1.1.0'
+}
+
+group = 'com.MoReport'
+version = '0.0.1-SNAPSHOT'
+
+java {
+	sourceCompatibility = '17'
+}
+
+configurations {
+	compileOnly {
+		extendsFrom annotationProcessor
+	}
+}
+
+repositories {
+	mavenCentral()
+}
+
+dependencies {
+	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+	implementation 'org.springframework.boot:spring-boot-starter-security'
+	implementation 'org.springframework.boot:spring-boot-starter-web'
+	compileOnly 'org.projectlombok:lombok'
+	annotationProcessor 'org.projectlombok:lombok'
+	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+	testImplementation 'org.springframework.security:spring-security-test'
+
+	//redis (refresh token용도)
+	implementation 'org.springframework.boot:spring-boot-starter-data-redis'
+	//mariaDB
+	runtimeOnly 'org.mariadb.jdbc:mariadb-java-client'
+	//영속성 에너테이션
+	implementation 'javax.persistence:javax.persistence-api:2.2'
+	//Swagger
+	implementation 'org.springdoc:springdoc-openapi-starter-webmvc-ui:2.0.2'
+	//jwt
+	implementation "io.jsonwebtoken:jjwt:0.9.1"
+	// com.sun.xml.bind for jwt
+	implementation 'com.sun.xml.bind:jaxb-impl:4.0.1'
+	implementation 'com.sun.xml.bind:jaxb-core:4.0.1'
+	// javax.xml.bind for jwt
+	implementation 'javax.xml.bind:jaxb-api:2.4.0-b180830.0359'
+	// web flux
+	implementation 'org.springframework.boot:spring-boot-starter-webflux'
+	// AWS S3
+	implementation 'org.springframework.cloud:spring-cloud-starter-aws:2.2.6.RELEASE'
+	// Java Mail
+	implementation 'org.springframework.boot:spring-boot-starter-mail'
+}
+
+springBoot{
+	mainClass.set('com.MoReport.MoReportApplication')
+}
+
+tasks.named('test') {
+	useJUnitPlatform()
+}

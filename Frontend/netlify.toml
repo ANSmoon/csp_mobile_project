@@ -1,0 +1,46 @@
+[[redirects]]
+  from = "/proxy/*"
+  to = "http://ec2-43-200-215-152.ap-northeast-2.compute.amazonaws.com:8080/:splat"
+  status = 200
+  force = true
+  
+[[redirects]]
+  from = "/day/api/*"
+  to = "http://ec2-43-200-215-152.ap-northeast-2.compute.amazonaws.com:8080/:splat"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "/month/api/*"
+  to = "http://ec2-43-200-215-152.ap-northeast-2.compute.amazonaws.com:8080/:splat"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "/week/api/*"
+  to = "http://ec2-43-200-215-152.ap-northeast-2.compute.amazonaws.com:8080/:splat"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "/setting/api/*"
+  to = "http://ec2-43-200-215-152.ap-northeast-2.compute.amazonaws.com:8080/:splat"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "/admin/api/*"
+  to = "http://ec2-43-200-215-152.ap-northeast-2.compute.amazonaws.com:8080/:splat"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "/api/*"
+  to = "http://ec2-43-200-215-152.ap-northeast-2.compute.amazonaws.com:8080/:splat"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
